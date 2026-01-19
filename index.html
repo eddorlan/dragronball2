@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="https://web.dragonball-api.com/images-compressed/logo_dragonballapi.webp" type="image/x-icon">
+    <link rel="icon" href="https://web.dragonball-api.com/images-compressed/logo_dragonballapi.webp" type="image/webp">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball Super API - Characters</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="{% static 'dragonball/css/styles.css' %}">
+    <style>
+    body {
+        background: #000000 !important;
+    }
+    </style>
+</head>
+<body>
+    <!-- Header principal -->
+    <div class="main-header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="https://web.dragonball-api.com/images-compressed/logo_dragonballapi.webp"
+                     alt="Dragon Ball Super API"
+                     class="logo-img"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <h1 style="display: none; color: #f39c12; font-size: 2.5rem; font-weight: 800; text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); margin: 0;">
+                    🐲 La API de Dragon Ball 🌍
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Barra de búsqueda -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-6 col-md-8">
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search characters by name">
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor de personajes -->
+        <div id="characterContainer" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5">
+            <!-- Character cards will be inserted here -->
+        </div>
+
+        <!-- Paginación -->
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center flex-wrap" id="pagination">
+                <!-- Pagination buttons will be inserted here -->
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Modal para detalles del personaje -->
+    <div class="modal fade" id="characterModal" tabindex="-1" aria-labelledby="characterModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="characterModalLabel">Character Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img id="characterImage" src="" alt="Character Image" class="img-fluid rounded shadow-lg">
+                        </div>
+                        <div class="col-md-7">
+                            <h3 id="characterName" class="mb-3" style="color: #f39c12;"></h3>
+                            <p id="characterDescription" class="mb-4" style="font-size: 1.05rem; line-height: 1.6;"></p>
+                            <ul id="characterDetails" class="list-group list-group-flush"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript Personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
