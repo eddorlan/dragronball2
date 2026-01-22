@@ -1,1 +1,1 @@
-web: python manage.py migrate && python manage.py collectstatic --noinput && gunicorn dragronball2.wsgi --log-file -
+web: gunicorn dragronball2.wsgi:application --bind 0.0.0.0:$PORT

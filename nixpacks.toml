@@ -1,0 +1,15 @@
+[phases.setup]
+nixPkgs = ['python310']
+
+[phases.install]
+cmds = ['pip install -r requirements.txt']
+
+[start]
+cmd = 'gunicorn dragronball2.wsgi:application --bind 0.0.0.0:$PORT'
+```
+
+## ✅ También actualiza el Procfile
+
+Simplifica el `Procfile` a solo esto:
+```
+web: gunicorn dragronball2.wsgi:application --bind 0.0.0.0:$PORT
