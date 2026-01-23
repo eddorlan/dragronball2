@@ -1,1 +1,1 @@
-web: gunicorn dragronball2.wsgi:application --bind 0.0.0.0:$PORT
+web: gunicorn dragronball2.wsgi:application --chdir dragronball2
